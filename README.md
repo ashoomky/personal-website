@@ -30,19 +30,20 @@ Follow these steps to run the project locally:
 git clone https://github.com/yourusername/personal-website.git
 cd personal-website
 
-```bash
 # 2. Install dependencies
+```bash
 npm install
 
-```bash
 # 3. Start the development server
+```bash
 npm run dev
 # Open http://localhost:5173 in your browser
 
-```bash
+
 # 4. Build for production
+```bash
 npm run build
 
-```bash
 # 5. Preview the production build
+```bash
 npm run preview
