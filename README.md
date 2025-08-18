@@ -31,23 +31,23 @@ git clone https://github.com/yourusername/personal-website.git
 cd personal-website
 ```
 
-# 2. Install dependencies
+## 2. Install dependencies
 ```bash
 npm install
 ```
 
-# 3. Start the development server
+## 3. Start the development server
 ```bash
 npm run dev
 # Open http://localhost:5173 in your browser
 ```
 
-# 4. Build for production
+## 4. Build for production
 ```bash
 npm run build
 ```
 
-# 5. Preview the production build
+## 5. Preview the production build
 ```bash
 npm run preview
 ```
