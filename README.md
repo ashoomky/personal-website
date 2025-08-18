@@ -1,12 +1,49 @@
-# React + Vite
+Personal Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal website, built with React and Vite. It showcases my projects, skills, and portfolio, and serves as a platform to experiment with modern web development technologies.
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React + Vite: Minimal setup with fast development experience and Hot Module Replacement (HMR).
 
-## Expanding the ESLint configuration
+ESLint: Configured for clean, maintainable code.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Responsive Design: Works across desktop and mobile devices.
+
+Portfolio Showcase: Highlights personal projects and GitHub repositories.
+
+Modern Tooling: Uses the latest versions of React, Vite, and relevant plugins.
+
+Technologies
+
+Frontend: React, Vite
+
+Plugins:
+
+@vitejs/plugin-react (Babel) for Fast Refresh
+
+Optional: @vitejs/plugin-react-swc (SWC) for faster compilation
+
+Linting: ESLint with recommended rules
+
+Optional: TypeScript (if you choose to integrate in the future)
+
+Getting Started
+1. Clone the repository
+git clone https://github.com/yourusername/personal-website.git
+cd personal-website
+
+2. Install dependencies
+npm install
+
+3. Start the development server
+npm run dev
+
+
+Open http://localhost:5173 to view it in the browser. The page will reload automatically when you make changes.
+
+4. Build for production
+npm run build
+
+5. Preview the production build
+npm run preview
