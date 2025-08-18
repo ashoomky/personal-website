@@ -1,8 +1,8 @@
-Personal Website
+#Personal Website
 
 This is my personal website, built with React and Vite. It showcases my projects, skills, and portfolio, and serves as a platform to experiment with modern web development technologies.
 
-Features
+#Features
 
 React + Vite: Minimal setup with fast development experience and Hot Module Replacement (HMR).
 
@@ -14,11 +14,11 @@ Portfolio Showcase: Highlights personal projects and GitHub repositories.
 
 Modern Tooling: Uses the latest versions of React, Vite, and relevant plugins.
 
-Technologies
+#Technologies
 
 Frontend: React, Vite
 
-Plugins:
+#Plugins:
 
 @vitejs/plugin-react (Babel) for Fast Refresh
 
@@ -28,7 +28,7 @@ Linting: ESLint with recommended rules
 
 Optional: TypeScript (if you choose to integrate in the future)
 
-Getting Started
+#Getting Started
 1. Clone the repository
 git clone https://github.com/yourusername/personal-website.git
 cd personal-website
