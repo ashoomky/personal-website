@@ -1,6 +1,6 @@
 const Navbar = () => {
     return (
-        <div className ="w-full h-18 bg-transparent border flex items-center justify-center ">
+        <div className ="w-full h-18 bg-transparent flex items-center justify-center ">
             {/* logo lhs */}
             <div className="p-6 absolute left-0">
                 <a href="#" className="text-2xl font-bold">ashleeshum</a>
