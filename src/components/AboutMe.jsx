@@ -1,22 +1,94 @@
+import React, { useState, useEffect } from 'react'
+import NatsPhoto from '../assets/nats-vlog-photo.JPG'
+import HackathonHeadshot from '../assets/25-wdccxsesa-hackathon-headshot.JPEG'
+import CasualPhoto from '../assets/casual-food-photo.JPG'
+import NewYorkSkyline from '../assets/newyork-skyline.JPG'
 const AboutMe = () => {
+    const photos = [NatsPhoto, HackathonHeadshot, CasualPhoto, NewYorkSkyline];
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
+    const [dragStart, setDragStart] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setDragStart(e.clientX);
+    }
+
+    const handleMouseMove = (e) => {
+        // if user not dragging, do nothing
+        if (!isDragging) return;
+        // calculate distance dragged
+        const dragDistance = e.clientX - dragStart;
+        if (dragDistance > 50) {
+            //  if on last photo, loop back to first
+            setCurrentIndex(prevIndex => prevIndex == 0 ? photos.length - 1 : prevIndex - 1);
+            setIsDragging(false);
+        } else if (dragDistance < -50) {
+            // else loop to next photo when dragging right
+            setCurrentIndex(prevIndex => (prevIndex + 1) % photos.length);
+            setIsDragging(false);
+        }
+    };
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };  
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    }
     return (
-        <div className="w-full h-[800px] pt-30 justify-center border">
+        
+
+        <div id="about" className="w-full h-[800px] justify-center pt-20">
             <div className="text-4xl">
-                about me: 
+                about me
             </div>
             {/* pictures and description section */}
-            <div className="flex flex-row pt-5 justify-center items-center">
-                {/* photo cards */}
-                <div className="w-[300px] h-[300px] bg-gray-300 m-10">
-                    picture
+            <div className="flex flex-row pt-8 justify-center items-center">
+                {/* swiping photo cards */}
+                <div className="flex flex-1 justify-center items-center m-10 pl-20 cursor-grab active:cursor-grabbing"
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}
+                    onMouseLeave={handleMouseLeave}>
+                    
+                    {photos.map((photo, index) => {
+                        const rotation = (index - currentIndex) * 5 - 1 + Math.random() * 3;
+                        const zIndex = photos.length - Math.abs(index - currentIndex);
+                        const opacity = index === currentIndex ? 1 : 0.5;
+                        const scale = index === currentIndex ? 1 : 0.8;
+                        // only render current, previous, and next photo
+                        if (Math.abs(index - currentIndex) > 1 &&
+                            !(currentIndex === 0 && index === photos.length - 1) &&
+                            !(currentIndex === photos.length - 1 && index === 0)) {
+                            return null;
+                        }
+                        return (
+                            <img
+                                key={index}
+                                src={photo}
+                                alt={`Photo ${index + 1}`}
+                                className="absolute w-[300px] h-[300px] object-cover rounded-lg shadow-lg transition-all duration-300 hover:scale-103"
+                                style={{
+                                    transform: `rotate(${rotation}deg) scale(${scale})`,
+                                    zIndex: zIndex,
+                                    opacity: opacity,
+                                }}
+                                draggable={false}
+                            />   
+                    )})
+                    }
+                    <div className="absolute bottom-20 mt-4 text-sm text-gray-600">
+                        drag left or right to swipe photos !
+                    </div>
                 </div>
+    
                 {/* description */}
-                <div className="w-1/2 h-1/2 m-10 text-left">
+                <div className="flex-1 m-10 text-left pr-20">
                     <p className="pb-4">
                         hiya! I am currently a student at the University of Auckland in my penultimate year, studying a Bachelor of Science majoring in Computer Science. I have a passion for creating beautiful and functional web applications that solve real-world problems. 
                     </p>
                     <p className="pb-4">
-                        in my free time I enjoy editing videos, travelling, hitting the gym and listening to music. I'm always eager to learn and take on new challenges, and making genuine connections with people.
+                        in my free time I enjoy editing videos, travelling, gymming, listening to music and spending time with loved ones. I'm always eager to learn and take on new challenges, and making genuine connections with people.
                     </p>
                     <p className="pb-4">
                         thank you for visiting my website :)
