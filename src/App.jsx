@@ -1,13 +1,16 @@
 import { useState } from 'react'
 import './App.css'
+import Navbar from './components/Navbar.jsx'
+import LandingPage from './components/LandingPage.jsx'
 
-function App() {
-  const [count, setCount] = useState(0)
 
+const App = () => {
   return (
-    <>
-      <div className='flex'>hello</div>
-    </>
+    
+    <div>
+      <Navbar />
+      <LandingPage />
+    </div>
   )
 }
 
