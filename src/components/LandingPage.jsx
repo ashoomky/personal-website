@@ -40,7 +40,7 @@ const LandingPage = () => {
     return (
         <div className = "w-full">
             {/* nav bar */}
-            <div className ="absolute w-full h-18 flex items-center justify-center top-0 z-50">
+            <div className =" w-full h-18 flex items-center justify-center top-0 z-50 fixed">
             {/* logo lhs */}
                 <div className="p-6 absolute left-6">
                     <a href="#" className="text-2xl font-bold">ashleeshum</a>
@@ -58,7 +58,10 @@ const LandingPage = () => {
                         about
                         <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#" className="relative group">
+                    <a href="#experience" className="relative group" onClick={(e) => {
+                        const section = document.getElementById('experience');
+                        section.scrollIntoView({behavior: 'smooth', block: 'start' }); 
+                    }}>
                         experience
                         <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
                     </a>
@@ -80,8 +83,6 @@ const LandingPage = () => {
             <svg
                     ref={svgRef}
                     xmlns="http://www.w3.org/2000/svg"
-                    width="100%"
-                    height="100%"
                     className="absolute object-cover w-full h-full"
                 >
                     {/*  svg pipeline - each step alters the svg file */}

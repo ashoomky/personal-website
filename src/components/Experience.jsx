@@ -86,7 +86,7 @@ const Experience = () => {
         }
     };
     return (
-        <div className="w-full h-[1000px] text-center relative">
+        <div id="experience" className="w-full h-[1000px] text-center pt-20 ">
             {/* title */}
             <span className="text-4xl">
                 experience
