@@ -1,25 +1,41 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import MailIcon from '@mui/icons-material/Mail';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YoutubeIcon from '@mui/icons-material/YouTube';
 
 const LandingPage = () => {
-    const svgRef = useRef(null);
-    const [scroll, setScroll] = useState(0);
+    const svgRef = useRef(null); // reference to the SVG element
+    const [gradientPosition, setGradientPosition] = useState({ x: 50, y: 50 }); // initial position of gradient at center
+
+    useEffect(() => {
+        let animationFrameId;
+        
+        
+        const animateGradient = () => {
+            const svg = svgRef.current; // gets the <svg> element from svgRef.current
+            const gradient = svg.querySelector('#dynamic-gradient'); // gets the radial gradient element by its id
+            // updates the gradient's center position based on mouse movement
+            if (gradient) {
+                gradient.setAttribute('cx', `${gradientPosition.x}%`);
+                gradient.setAttribute('cy', `${gradientPosition.y}%`);
+            }
+            animationFrameId = requestAnimationFrame(animateGradient); // keeps it from running in the background when not needed
+        };
+
+        animateGradient();
+
+        return () => cancelAnimationFrame(animationFrameId);
+    }, [gradientPosition]);
 
     const handleMouseMove = (e) => {
         const svg = svgRef.current;
         const rect = svg.getBoundingClientRect(); // get SVG position and size
+        // convert mouse coordinates to percentages relative to SVG
         const x = ((e.clientX - rect.left) / rect.width) * 100; // mouse X relative to the SVG
         const y = ((e.clientY - rect.top) / rect.height) * 100;  // mouse Y relative to the SVG
 
-        // update the radial gradient's center
-        const gradient = svg.querySelector('#dynamic-gradient');
-        if (gradient) {
-            gradient.setAttribute('cx', `${x}%`);
-            gradient.setAttribute('cy', `${y}%`);
-        }
+        setGradientPosition({ x, y }); // update state with new position
     };
     return (
         <div className = "w-full">
@@ -54,7 +70,11 @@ const LandingPage = () => {
             
         
             </div>
-            <div id = "home" className = "w-screen h-screen flex items-center justify-center md:justify-start relative bg-gradient-to-b from-pink-300 via-pink-200 to-pink-100" onMouseMove = {handleMouseMove}>
+            <div id = "home" 
+                className = "w-screen h-screen flex items-center justify-center md:justify-start relative bg-gradient-to-b from-pink-300 via-pink-200 to-pink-100" 
+                onMouseMove = {handleMouseMove}
+                style={{ background: "linear-gradient(to bottom right,  #C6A6B8, #E8D0D7, #FFECEC, #E8D0D7, #C6A6B8)", // custom gradient colors
+                }}>
             
             {/* background grain */}
             <svg
@@ -81,33 +101,35 @@ const LandingPage = () => {
                                 in="noise" // applies the previous step (feTurbulence)
                                 result="monoNoise" // saves for next step
                             />
+                            {/* affecting the alpha channel (feFuncA) transparency */}
                             <feComponentTransfer in="monoNoise" result="opacityNoise"> 
-                                <feFuncA type="discrete" tableValues="0.05 0.1 0.15 0.2" /> // randomly maps the grayscale noise to low opacity values
+                                <feFuncA type="discrete" tableValues="0.05 0.1 0.15 0.2" /> {/* adjust values for more/less grain */}
                             </feComponentTransfer>
+                            {/* blends the grainy texture with the background fill colour, changing the grain to by lighter when bg is lighter, etc. */}
                             <feBlend mode="multiply" in="opacityNoise" in2="SourceGraphic" />
                         </filter>
 
-                        {/* Dynamic radial gradient that lightens on mouse hover */}
-                        <radialGradient id="dynamic-gradient" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8" />
+                        {/* dynamic radial/circle gradient that lightens on mouse hover */}
+                        <radialGradient id="dynamic-gradient" cx="50%" cy="50%" r="25%">
+                            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.6" />
                             <stop offset="30%" stopColor="#FFFFFF" stopOpacity="0.4" />
                             <stop offset="70%" stopColor="#FFFFFF" stopOpacity="0.1" />
-                            <stop offset="100%" stopColor="transparent" stopOpacity="0" />
+                            <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.01" />
                         </radialGradient>
                     </defs>
                     
-                    {/* Background rectangle with gradient and grain */}
+                    {/* background rectangle with gradient and grain */}
                     <rect width="100%" height="100%" fill="url(#dynamic-gradient)" filter="url(#noise)" />
                 </svg>
             {/* intro */}
-            <div className="text-6xl md:pl-30 z-10">
+            <div className="text-6xl md:pl-30 z-10 text-left">
                 Hi! My name is <br />
-                <span className="font-bold">Ashlee Shum.</span>
+                <span className="font-bold text-8xl text-left">Ashlee Shum.</span>
             </div>
             {/* social icon links */}
-            <div className="flex flex-row absolute pt-50 md:pl-30">
+            <div className="flex flex-row absolute pt-60 md:pl-30 ">
                 <a href="mailto:ashlee@shum.co.nz" target="_blank" rel="noopener noreferrer">
-                    <MailIcon className="m-4 ml-0"/>
+                    <MailIcon className="m-4 ml-0 hover:text-black transition-transform duration-300"/>
                 </a>
                 <a href="https://github.com/ashoomky" target="_blank" rel="noopener noreferrer">
                     <GitHubIcon className="m-4"/>
