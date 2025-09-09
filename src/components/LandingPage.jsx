@@ -5,7 +5,7 @@ import YoutubeIcon from '@mui/icons-material/YouTube';
 
 const LandingPage = () => {
     return (
-        <div id = "home" className = "w-full h-[600px] flex items-center pl-30">
+        <div id = "home" className = "w-screen h-[600px] flex items-center md:pl-30 justify-center md:justify-start bg-gray-to-b from-white via-white to-gray-200 relative">
             {/* intro */}
             <div className="text-6xl">
                 Hi! My name is <br />

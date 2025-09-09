@@ -43,9 +43,9 @@ const AboutMe = () => {
                 about me
             </div>
             {/* pictures and description section */}
-            <div className="flex flex-row pt-8 justify-center items-center">
+            <div className="flex flex-col md:flex-row md:-mt-30 h-[750px] pt-8 justify-center items-center m-10">
                 {/* swiping photo cards */}
-                <div className="flex flex-1 justify-center items-center m-10 pl-20 cursor-grab active:cursor-grabbing"
+                <div className="flex flex-1 h-[300px] justify-center items-center m-10 cursor-grab active:cursor-grabbing"
                     onMouseDown={handleMouseDown}
                     onMouseMove={handleMouseMove}
                     onMouseUp={handleMouseUp}
@@ -77,13 +77,13 @@ const AboutMe = () => {
                             />   
                     )})
                     }
-                    <div className="absolute bottom-20 mt-4 text-sm text-gray-600">
+                    {/* <div className="absolute -bottom-65 mt-4 text-sm text-gray-600">
                         drag left or right to swipe photos !
-                    </div>
+                    </div> */}
                 </div>
     
                 {/* description */}
-                <div className="flex-1 m-10 text-left pr-20">
+                <div className="flex-1 md:w-1/2 m-10 text-left">
                     <p className="pb-4">
                         hiya! I am currently a student at the University of Auckland in my penultimate year, studying a Bachelor of Science majoring in Computer Science. I have a passion for creating beautiful and functional web applications that solve real-world problems. 
                     </p>
