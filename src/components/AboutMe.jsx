@@ -38,12 +38,12 @@ const AboutMe = () => {
     return (
         
 
-        <div id="about" className="w-full h-[800px] justify-center pt-20">
+        <div id="about" className="w-full justify-center items-center p-20 ">
             <div className="text-4xl">
                 about me
             </div>
             {/* pictures and description section */}
-            <div className="flex flex-col md:flex-row md:-mt-30 h-[750px] pt-8 justify-center items-center m-10">
+            <div className="flex flex-col md:flex-row h-[750px] pt-8 justify-center items-center text-center">
                 {/* swiping photo cards */}
                 <div className="flex flex-1 h-[300px] justify-center items-center m-10 cursor-grab active:cursor-grabbing"
                     onMouseDown={handleMouseDown}
@@ -88,7 +88,7 @@ const AboutMe = () => {
                         hiya! I am currently a student at the University of Auckland in my penultimate year, studying a Bachelor of Science majoring in Computer Science. I have a passion for creating beautiful and functional web applications that solve real-world problems. 
                     </p>
                     <p className="pb-4">
-                        in my free time I enjoy editing videos, travelling, gymming, listening to music and spending time with loved ones. I'm always eager to learn and take on new challenges, and making genuine connections with people.
+                        in my free time I enjoy editing videos, travelling, gymming, listening to music and spending time with loved ones. I'm always eager to learn and take on new challenges, and make genuine connections with people.
                     </p>
                     <p className="pb-4">
                         thank you for visiting my website :)

@@ -86,14 +86,14 @@ const Experience = () => {
         }
     };
     return (
-        <div id="experience" className="w-full h-[1000px] text-center pt-20 ">
+        <div id="experience" className="w-full text-center pt-20 ">
             {/* title */}
             <span className="text-4xl">
                 experience
             </span>
             {/* experience contents */}
-            <div className="flex flex-col relative mt-10 "> 
-                {/* vertical timeline indicator */}
+            <div className="flex flex-col relative mt-10 mx-auto max-w-5xl"> 
+                {/* vertical timeline indicator (only on desktop) */}
                 <div className="absolute top-10 left-25 transform -translate-x-1/2 w-1 bg-[#C6A6B8] hidden md:block "
                 style={{ bottom: "15rem" }}  
                 ></div>
@@ -108,7 +108,7 @@ const Experience = () => {
                                 className={`absolute top-10 left-25 transform -translate-x-1/2 w-5 h-5 border-[3px] border-[#C6A6B8] rounded-full hover:bg-[#C6A6B8] transition cursor-pointer hidden md:block ${i === activeIndex ? "bg-[#C6A6B8]" : "bg-white"}`}
                             />
                             {/* card itself */}
-                            <div className="md:flex-1">
+                            <div className="md:ml-50">
                                 <ExperienceCard
                                     title={exp.title}
                                     start={exp.start}

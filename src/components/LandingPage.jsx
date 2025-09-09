@@ -38,15 +38,15 @@ const LandingPage = () => {
         setGradientPosition({ x, y }); // update state with new position
     };
     return (
-        <div className = "w-full">
+        <div className = "">
             {/* nav bar */}
-            <div className =" w-full h-18 flex items-center justify-center top-0 z-50 fixed">
+            <div className =" w-full h-18 flex items-center justify-between p-6 top-0 z-50">
             {/* logo lhs */}
-                <div className="p-6 absolute left-6">
+                <div className="p-6 left-6">
                     <a href="#" className="text-2xl font-bold">ashleeshum</a>
                 </div>
                 {/* nav links rhs */}
-                <div className="flex flex-row space-x-4 right-0 absolute p-6">
+                <div className="flex flex-row space-x-4 right-0 p-6">
                     <a href="#home" className="relative group">
                         home
                         <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -74,7 +74,7 @@ const LandingPage = () => {
         
             </div>
             <div id = "home" 
-                className = "w-screen h-screen flex items-center justify-center md:justify-start relative bg-gradient-to-b from-pink-300 via-pink-200 to-pink-100" 
+                className = "w-full h-screen flex items-center justify-center md:justify-start relative bg-gradient-to-b from-pink-300 via-pink-200 to-pink-100" 
                 onMouseMove = {handleMouseMove}
                 style={{ background: "linear-gradient(to bottom right,  #C6A6B8, #E8D0D7, #FFECEC, #E8D0D7, #C6A6B8)", // custom gradient colors
                 }}>
@@ -125,7 +125,7 @@ const LandingPage = () => {
             {/* intro */}
             <div className="text-6xl md:pl-30 z-10 text-left">
                 Hi! My name is <br />
-                <span className="font-bold text-8xl text-left">Ashlee Shum.</span>
+                <span className="font-bold md:text-8xl text-left">Ashlee Shum.</span>
             </div>
             {/* social icon links */}
             <div className="flex flex-row absolute pt-60 md:pl-30 ">
