@@ -1,7 +1,10 @@
 import { GitHub } from "@mui/icons-material"
 import ProjectCard from "./ProjectCard"
 import FindrScreenshot from "../assets/FindrScreenshot.png"
+import {useState} from "react"
+import React from "react"
 const Projects = () => {
+    const [expandedCardIndex, setExpandedCardIndex] = React.useState(null);
     const projects = [
         {
             title: "Findr",
@@ -26,7 +29,7 @@ const Projects = () => {
                 projects
             </div>
             {/* project cards */}
-            <div className="flex md:flex-row flex-col justify-center items-center">
+            <div className="flex md:flex-row flex-col justify-center items-center mt-20">
                 {projects.map((project, index) => (
                     <ProjectCard 
                     key={index} 
@@ -35,6 +38,11 @@ const Projects = () => {
                     GitHubLink={project.GitHubLink}
                     TechStack={project.TechStack}
                     photo={project.photo}
+                    isExpanded={expandedCardIndex === index}
+                    isHidden={expandedCardIndex !== null && expandedCardIndex !== index}
+                    onToggle={() => {
+                        setExpandedCardIndex(expandedCardIndex === index ? null : index);
+                    }}
                     />
                 ))}
             </div>

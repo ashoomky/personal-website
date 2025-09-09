@@ -43,7 +43,7 @@ const AboutMe = () => {
                 about me
             </div>
             {/* pictures and description section */}
-            <div className="flex flex-col md:flex-row h-[750px] pt-8 justify-center items-center text-center">
+            <div className="flex flex-col h-[950px] md:h-[500px] md:flex-row pt-8 justify-center items-center text-center">
                 {/* swiping photo cards */}
                 <div className="flex flex-1 h-[300px] justify-center items-center m-10 cursor-grab active:cursor-grabbing"
                     onMouseDown={handleMouseDown}
@@ -77,9 +77,6 @@ const AboutMe = () => {
                             />   
                     )})
                     }
-                    {/* <div className="absolute -bottom-65 mt-4 text-sm text-gray-600">
-                        drag left or right to swipe photos !
-                    </div> */}
                 </div>
     
                 {/* description */}
