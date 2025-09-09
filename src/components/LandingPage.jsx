@@ -65,7 +65,10 @@ const LandingPage = () => {
                         experience
                         <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#" className=" relative group">
+                    <a href="#projects" className="relative group" onClick={(e) => {
+                        const section = document.getElementById('projects');
+                        section.scrollIntoView({behavior: 'smooth', block: 'start' }); 
+                    }}>
                         projects
                         <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
                     </a>
