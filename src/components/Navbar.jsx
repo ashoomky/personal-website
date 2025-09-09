@@ -2,7 +2,7 @@ const Navbar = () => {
     return (
         <div className ="w-full h-18 bg-transparent flex items-center justify-center sticky top-0 z-50">
             {/* logo lhs */}
-            <div className="p-6 absolute left-0">
+            <div className="p-6 absolute left-6">
                 <a href="#" className="text-2xl font-bold">ashleeshum</a>
             </div>
             {/* nav links rhs */}

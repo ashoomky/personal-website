@@ -1,0 +1,23 @@
+<!-- <svg xmlns="http://www.w3.org/2000/svg" width="650" height="650" viewBox="0 0 650 650">
+    <filter id="grainy">
+        <feTurbulence type="turbulence" baseFrequency="0.8" />
+    </filter>
+    <circle cx="325" cy="325" r="325" fill="#D9D9D9" filter="url(#grainy)" /> 
+</svg> -->
+<svg xmlns="http://www.w3.org/2000/svg" width="650" height="650" viewBox="0 0 650 650">
+    <defs>
+        <!-- Spotlight filter -->
+        <filter id="spotlight">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="50" result="blur" />
+            <feBlend in="SourceGraphic" in2="blur" mode="lighten" />
+        </filter>
+        <!-- Grainy filter -->
+        <filter id="grainy">
+            <feTurbulence type="turbulence" baseFrequency="0.8" />
+        </filter>
+    </defs>
+    <!-- grainy circle -->
+    <circle id="grainy-circle" cx="325" cy="325" r="325" fill="#cb969f" filter="url(#grainy)" />
+    <!-- spotlight circle -->
+    <circle id="spotlight-circle" cx="325" cy="325" r="150" fill="pink" opacity="0.5" filter="url(#spotlight)" />
+</svg>

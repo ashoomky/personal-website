@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="650" height="650" viewBox="0 0 650 650">
+  <defs>
+    <!-- make a grainy texture -->
+    <filter id="grainy">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="monoNoise"/>
+    </filter>
+
+    <!-- make circle mask -->
+    <mask id="circleMask">
+      <circle cx="325" cy="325" r="325" fill="white"/>
+    </mask>
+  </defs>
+
+  <!-- rectangle filled with grain, but masked by the circle -->
+  <rect width="650" height="650" fill="#D9D9D9" filter="url(#grainy)" mask="url(#circleMask)" />
+</svg>
+
