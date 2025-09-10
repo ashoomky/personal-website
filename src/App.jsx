@@ -9,7 +9,6 @@ import Footer from './components/Footer.jsx'
 const App = () => {
 
   return (
-    
     <div>
       {/* <Navbar /> */}
       <LandingPage />

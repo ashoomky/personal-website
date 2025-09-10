@@ -23,7 +23,7 @@ const Projects = () => {
         },
     ]
     return (
-        <div id="projects" className="w-full justify-center p-20">
+        <div id="projects" className="w-full justify-center p-30">
             {/* title */}
             <div className="text-4xl">
                 projects
