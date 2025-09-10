@@ -7,6 +7,23 @@ import YoutubeIcon from '@mui/icons-material/YouTube';
 const LandingPage = () => {
     const svgRef = useRef(null); // reference to the SVG element
     const [gradientPosition, setGradientPosition] = useState({ x: 50, y: 50 }); // initial position of gradient at center
+    const [onScroll, setOnScroll] = useState(false);
+
+    const handleScroll = () => {
+        if (window.scrollY > 100) {
+            setOnScroll(true);
+        } else {
+            setOnScroll(false);
+        }
+    }
+
+        // add listener to track scroll position
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     useEffect(() => {
         let animationFrameId;
@@ -40,13 +57,13 @@ const LandingPage = () => {
     return (
         <div className = "">
             {/* nav bar */}
-            <div className =" w-full h-18 flex items-center justify-between p-6 top-0 z-50">
+            <div className ={`w-full h-18 flex items-center justify-between top-0 px-6 z-50 fixed transition-all duration-300 ${onScroll ? "bg-white/70 backdrop-blur-md border-gray-200" : "bg-transparent"}`}>
             {/* logo lhs */}
-                <div className="p-6 left-6">
+                <div className="left-6">
                     <a href="#" className="text-2xl font-bold">ashleeshum</a>
                 </div>
                 {/* nav links rhs */}
-                <div className="flex flex-row space-x-4 right-0 p-6">
+                <div className="flex flex-row space-x-4">
                     <a href="#home" className="relative group">
                         home
                         <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -86,7 +103,7 @@ const LandingPage = () => {
             <svg
                     ref={svgRef}
                     xmlns="http://www.w3.org/2000/svg"
-                    className="absolute object-cover w-full h-full"
+                    className="absolute inset-0 w-screen h-screen"
                 >
                     {/*  svg pipeline - each step alters the svg file */}
                     <defs>

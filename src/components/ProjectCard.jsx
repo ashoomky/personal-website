@@ -6,7 +6,7 @@ const ProjectCard = ({title, description, GitHubLink, TechStack, photo, isExpand
     return (
         
         
-        <div className={` transition-all duration-500 ease-out ${isExpanded ? 'w-[800px] h-[600px]' : 'w-100% h-[300px]'} bg-white p-4 text-left m-6`}>
+        <div className={` transition-all duration-500 ease-out ${isExpanded ? 'md:w-[800px] md:h-[600px]' : 'w-100% h-[300px]'} bg-white p-4 text-left m-6`}>
             {!isExpanded ? (
                 // folder card / collapsed state 
                 <div className="relative flex flex-col border-2 justify-end items-start w-70 h-58 bg-amber-100 p-4 text-left border border-amber-300 rounded-b-lg cursor-pointer transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg group" 
