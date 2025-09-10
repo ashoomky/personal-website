@@ -90,6 +90,9 @@ const AboutMe = () => {
                     <p className="pb-4">
                         thank you for visiting my website :)
                     </p>
+                    <p className="italic text-gray-600 text-sm">
+                        [swipe photos left and right]
+                    </p>
                 </div>
             </div>
         </div>
