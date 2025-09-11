@@ -6,8 +6,7 @@ const ProjectCard = ({title, description, GitHubLink, TechStack, photo, isExpand
 
     return (
         
-        
-        <div className={` transition-all duration-500 ease-out ${isExpanded ? 'lg:w-[800px] lg:h-[600px]' : 'w-100% h-[300px]'} bg-white p-4 m-6`}>
+        <div className={` transition-all duration-500 ease-out ${isExpanded ? 'lg:w-[800px] lg:h-full' : 'w-100% h-[400px]'} bg-white p-4 m-6`}>
             {!isExpanded ? (
                 <div className="items-center justify-center flex flex-col h-full space-y-3">
                 <img 
@@ -16,7 +15,7 @@ const ProjectCard = ({title, description, GitHubLink, TechStack, photo, isExpand
                     className="w-[200px] h-[200px] min-w-[250px] min-h-[250px] flex-shrink-0 cursor-pointer hover:scale-105 transition-transform duration-200"
                     onClick={onToggle}
                 />
-                <div className="h-1 w-10 border bg-gray-300 opacity-50"></div>
+                <div className="h-1 w-10 bg-gray-300 opacity-50"></div>
                 <span className="text-xl font-bold"> {title}</span>
                  <p className="italic text-gray-800"> {TechStack} </p>
                  </div> 
@@ -58,7 +57,7 @@ const ProjectCard = ({title, description, GitHubLink, TechStack, photo, isExpand
                                 </div>
                             )}
                         </div>
-                        <p className="text-lg font-semibold text-amber-600 italic">{TechStack}</p>
+                        <p className="text-lg font-semibold text-gray-600 italic text-left opacity-60">{TechStack}</p>
                     </div>
 
                     {/* file content area */}
