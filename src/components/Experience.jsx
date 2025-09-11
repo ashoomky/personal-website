@@ -1,69 +1,66 @@
 import ExperienceCard from "./ExperienceCard"
-import {useRef, useState, useEffect} from "react"
+import { useRef, useState, useEffect } from "react"
 
 const Experience = () => {
     const experiences = [
-  {
-    title: "Marketing Director at UOACS (University of Auckland Compsci Society)",
-    start: "July 2025",
-    end: "Current",
-    description: (
-      <>
-        As a Marketing Director, I <strong>led weekly meetings</strong>, delegated tasks effectively, and 
-        facilitated brainstorming sessions to drive creativity and collaboration. <br />
-        <br/>
-        Managed a team of <strong>4</strong>, coordinating marketing efforts across multiple platforms and 
-        boosting account engagement by <strong>278.1%</strong> in one month. <br />
-        Oversaw content strategy that increased follower growth by <strong>150%</strong> and improved 
-        average post reach by <strong>200%</strong>. <br />
-        <br/>
-        Strengthened my skills in <em>leadership, communication, problem-solving, and adaptability </em>  
-        while ensuring campaigns were delivered on time and aligned with brand goals.
-    </>
+        {
+            title: "Marketing Director at UOACS (University of Auckland Compsci Society)",
+            start: "July 2025",
+            end: "Current",
+            description: (
+                <>
+                    As a Marketing Director, I <strong>led weekly meetings</strong>, delegated tasks effectively, and
+                    facilitated brainstorming sessions to drive creativity and collaboration. <br />
+                    <br />
+                    Managed a team of <strong>4</strong>, coordinating marketing efforts across multiple platforms and
+                    boosting account engagement by <strong>278.1%</strong> in one month. <br />
+                    Oversaw content strategy that increased follower growth by <strong>150%</strong> and improved
+                    average post reach by <strong>200%</strong>. <br />
+                    <br />
+                    Strengthened my skills in <em>leadership, communication, problem-solving, and adaptability </em>
+                    while ensuring campaigns were delivered on time and aligned with brand goals.
+                </>
 
-    )
-  },
-  {
-    title: "YouTube Editor / Vlogger",
-    start: "September 2022",
-    end: "Current",
-    description: (
-      <>
-        <p>
-            I created and managed my own <strong>YouTube channel</strong> as a 
-            <em> vlogger and video editor</em>, producing lifestyle and travel content. 
-            I handled all aspects of production, including filming, editing, and audience engagement. 
-            <br/>
-            <br/>
-            My most viewed video reached <strong>40,000+ views</strong>, and several others gained consistent traction, 
-            demonstrating my ability to create engaging, shareable content. 
-            This experience strengthened my skills in <strong>video editing</strong>, 
-            <strong>storytelling</strong>, and <strong>digital media</strong>, 
-            while also teaching me how to analyse audience metrics to grow viewership.
-        </p>
+            )
+        },
+        {
+            title: "YouTube Editor / Vlogger",
+            start: "September 2022",
+            end: "Current",
+            description: (
+                <>
+                    I created and managed my own <strong>YouTube channel</strong> as a
+                    <em> vlogger and video editor</em>, producing lifestyle and travel content.
+                    I handled all aspects of production, including filming, editing, and audience engagement.
+                    <br />
+                    <br />
+                    My most viewed video reached <strong>40,000+ views</strong>, and several others gained consistent traction,
+                    demonstrating my ability to create engaging, shareable content.
+                    This experience strengthened my skills in <strong>video editing</strong>,
+                    <strong>storytelling</strong>, and <strong>digital media</strong>,
+                    while also teaching me how to analyse audience metrics to grow viewership.
+                </>
+            )
+        },
+        {
+            title: "FOH at Little Penang",
+            start: "Feb 2023",
+            end: "June 2023",
+            description: (
+                <>
+                    Waitressed at Little Penang, multitasking between <strong>taking 50+ orders per shift</strong>,
+                    making drinks, delivering food, and attending to customers in a fast-paced environment. <br />
+                    <br />
+                    Learned to manage <strong>high-volume orders efficiently</strong> while maintaining
+                    <strong>customer satisfaction</strong> through friendly and attentive service. <br />
+                    <br />
+                    Strengthened skills in <em>teamwork, communication, adaptability, and time management </em>
+                    by coordinating with kitchen staff and handling peak rush hours smoothly.
+                </>
 
-      </>
-    )
-  },
-  {
-    title: "FOH at Little Penang",
-    start: "Feb 2023",
-    end: "June 2023",
-    description: (
-    <>
-        Waitressed at Little Penang, multitasking between <strong>taking 50+ orders per shift</strong>, 
-        making drinks, delivering food, and attending to customers in a fast-paced environment. <br />
-        <br/>
-        Learned to manage <strong>high-volume orders efficiently</strong> while maintaining 
-        <strong>customer satisfaction</strong> through friendly and attentive service. <br />
-        <br/>
-        Strengthened skills in <em>teamwork, communication, adaptability, and time management </em> 
-        by coordinating with kitchen staff and handling peak rush hours smoothly.
-    </>
-
-    )
-  }
-];
+            )
+        }
+    ];
 
     const cardRef = experiences.map(() => useRef(null));
     const [activeIndex, setActiveIndex] = useState(0);
@@ -86,7 +83,7 @@ const Experience = () => {
             {
                 root: null,  // viewport - entire screen
                 rootMargin: "-40% 0px -50% 0px", // top, right, bottom, left - trigger when middle of card is in middle of screen
-                threshold: 0         
+                threshold: 0
             }
         );
 
@@ -94,7 +91,7 @@ const Experience = () => {
         cardRef.forEach(ref => {
             if (ref.current) observer.observe(ref.current);
         });
-        
+
         // clean up - when component unmounts (not on page anymore), stop observing
         return () => {
             cardRef.forEach(ref => {
@@ -107,7 +104,7 @@ const Experience = () => {
 
     const scrollToCard = (index) => {
         if (cardRef[index].current) {
-            cardRef[index].current.scrollIntoView({behavior: 'smooth', block: 'center'});
+            cardRef[index].current.scrollIntoView({ behavior: 'smooth', block: 'center' });
             setActiveIndex(index); // updates active index when clicking on a dot
 
         }
@@ -119,7 +116,7 @@ const Experience = () => {
                 experience
             </span>
             {/* experience contents */}
-            <div className="flex flex-col relative mt-10 mx-auto max-w-5xl"> 
+            <div className="flex flex-col relative mt-10 mx-auto max-w-5xl">
                 {/* vertical timeline indicator (only on desktop) */}
                 <div className="absolute top-10 left-25 transform -translate-x-1/2 w-1 bg-[#C6A6B8] hidden md:block h-full"></div>
                 {/* horizontal divider line */}
