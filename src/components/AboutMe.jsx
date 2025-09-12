@@ -38,7 +38,7 @@ const AboutMe = () => {
     return (
         
 
-        <div id="about" className="w-full justify-center items-center p-20 ">
+        <div id="about" className=" w-full max-w-5xl mx-auto justify-center items-center p-20 ">
             <div className="text-4xl">
                 about me
             </div>
@@ -82,7 +82,7 @@ const AboutMe = () => {
                 {/* description */}
                 <div className="flex-1 md:w-1/2 m-10 text-left">
                     <p className="pb-4">
-                        hiya! I am currently a student at the University of Auckland in my penultimate year, studying a Bachelor of Science majoring in Computer Science. I have a passion for creating beautiful and functional web applications that solve real-world problems. 
+                        hiya! I am currently a student at the University of Auckland in my penultimate year, studying a Bachelor of Science majoring in Computer Science. I have a passion for creating beautiful and functional web applications that solve real world problems while also making a positive impact on people. 
                     </p>
                     <p className="pb-4">
                         in my free time I enjoy editing videos, travelling, gymming, listening to music and spending time with loved ones. I'm always eager to learn and take on new challenges, and make genuine connections with people.
