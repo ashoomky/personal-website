@@ -1,7 +1,7 @@
 import { GitHub } from "@mui/icons-material"
 import ProjectCard from "./ProjectCard"
 import FindrScreenshot from "../assets/FindrScreenshot.png"
-import PersonalWebsiteScreenshot from "../assets/personal-website-screenshot.JPG"
+import PersonalWebsiteScreenshot from "../assets/personal-website-screenshot.jpg"
 import AusaPhoto from "../assets/ausa-project-photo.png"
 import {useState} from "react"
 import React from "react"

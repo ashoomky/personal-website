@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import NatsPhoto from '../assets/nats-vlog-photo.JPG'
 import HackathonHeadshot from '../assets/25-wdccxsesa-hackathon-headshot.JPEG'
-import CasualPhoto from '../assets/casual-food-photo.JPG'
-import NewYorkSkyline from '../assets/newyork-skyline.JPG'
+import CasualPhoto from '../assets/casual-food-photo.jpg'
+import NewYorkSkyline from '../assets/newyork-skyline.jpg'
 const AboutMe = () => {
     const photos = [NatsPhoto, HackathonHeadshot, CasualPhoto, NewYorkSkyline];
     const [currentIndex, setCurrentIndex] = useState(0);
