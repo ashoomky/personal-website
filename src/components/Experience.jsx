@@ -9,16 +9,16 @@ const Experience = () => {
             end: "Current",
             description: (
                 <>
-                    As a Marketing Director, I <strong>led weekly meetings</strong>, delegated tasks effectively, and
-                    facilitated brainstorming sessions to drive creativity and collaboration. <br />
+                    As a Marketing Director, I <strong>lead weekly meetings</strong>, delegate tasks effectively, and
+                    facilitate brainstorming sessions to drive creativity and collaboration. <br />
                     <br />
-                    Managed a team of <strong>4</strong>, coordinating marketing efforts across multiple platforms and
-                    boosting account engagement by <strong>278.1%</strong> in one month. <br />
+                    I manage a team of <strong>4</strong>, coordinate marketing efforts across multiple platforms and
+                    boosted account engagement by <strong>278.1%</strong> in one month. <br />
                     Oversaw content strategy that increased follower growth by <strong>150%</strong> and improved
                     average post reach by <strong>200%</strong>. <br />
                     <br />
                     Strengthened my skills in <em>leadership, communication, problem-solving, and adaptability </em>
-                    while ensuring campaigns were delivered on time and aligned with brand goals.
+                    while ensuring campaigns were delivered on time and aligned with club goals.
                 </>
 
             )
@@ -29,9 +29,9 @@ const Experience = () => {
             end: "Current",
             description: (
                 <>
-                    I created and managed my own <strong>YouTube channel</strong> as a
+                    I created and manage my own <strong>YouTube channel</strong> as a
                     <em> vlogger and video editor</em>, producing lifestyle and travel content.
-                    I handled all aspects of production, including filming, editing, and audience engagement.
+                    I handle all aspects of production, including filming, editing, and audience engagement.
                     <br />
                     <br />
                     My most viewed video reached <strong>40,000+ views</strong>, and several others gained consistent traction,
@@ -48,7 +48,7 @@ const Experience = () => {
             end: "June 2023",
             description: (
                 <>
-                    Waitressed at Little Penang, multitasking between <strong>taking 50+ orders per shift</strong>,
+                    Waitressed at Little Penang, multitasked between <strong>taking 50+ orders per shift</strong>,
                     making drinks, delivering food, and attending to customers in a fast-paced environment. <br />
                     <br />
                     Learned to manage <strong>high-volume orders efficiently</strong> while maintaining
