@@ -52,7 +52,7 @@ const Experience = () => {
                     making drinks, delivering food, and attending to customers in a fast-paced environment. <br />
                     <br />
                     Learned to manage <strong>high-volume orders efficiently</strong> while maintaining
-                    <strong>customer satisfaction</strong> through friendly and attentive service. <br />
+                    <strong> customer satisfaction</strong> through friendly and attentive service. <br />
                     <br />
                     Strengthened skills in <em>teamwork, communication, adaptability, and time management </em>
                     by coordinating with kitchen staff and handling peak rush hours smoothly.
